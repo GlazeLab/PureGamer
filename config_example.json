@@ -1,0 +1,9 @@
+{
+    "super_admin_pub_key": "-----BEGIN PUBLIC KEY-----\n<content>\n-----END PUBLIC KEY-----",
+    "config_path": "dynamic.json",
+    "data_path": "./data",
+    "bootstrap_nodes": [
+        "/dnsaddr/bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN"
+    ],
+    "port": 0
+}
