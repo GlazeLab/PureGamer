@@ -110,6 +110,10 @@ Example Game Configuration:
 }
 ```
 
+## Showcase
+Here is an example network topology of PureGamer.
+![Network Topology](./.github/assets/network_example.png)
+
 ## Implementation Details
 PureGamer is implemented in Go.
 In directory `modules`, you can find the implementation of the core modules of PureGamer.
