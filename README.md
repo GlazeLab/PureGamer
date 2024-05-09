@@ -1,6 +1,5 @@
 # PureGamer: An Experimental Distributed Game Accelerator with Automatic Routing
 
-## Introduction
 PureGamer is an experimental distributed game accelerator with automatic routing.
 
 It is designed to accelerate online games by routing game traffic through the shortest path between the game server and the player.
