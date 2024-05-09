@@ -2,7 +2,9 @@
 
 ## Introduction
 PureGamer is an experimental distributed game accelerator with automatic routing.
+
 It is designed to accelerate online games by routing game traffic through the shortest path between the game server and the player.
+
 PureGamer is built on top of the [LibP2P](https://libp2p.io/) networking stack.
 
 ## Features
@@ -14,15 +16,22 @@ PureGamer is built on top of the [LibP2P](https://libp2p.io/) networking stack.
 
 ## How it works
 PureGamer use LibP2P to create a peer-to-peer network.
+
 It used Gossip PubSub to broadcast the latency information between the nodes.
+
 Nodes receive the latency information from other nodes and use it to calculate the shortest path between the game server and the entry node.
+
 It supports multiple transport protocols, such as TCP and QUIC, thanks to LibP2P.
+
 By default, Multiplexing is enabled.
+
 Data is encrypted using the Noise protocol.
+
 The game configuration can be updated on the fly using PubSub.
 
 ## Configuration
 The node configuration is stored in `config.json`.
+
 It contains the following fields:
 - `super_admin_pub_key`: The public key of the super admin.
 - `config_path`: The path to the game configuration file.
@@ -31,6 +40,7 @@ It contains the following fields:
 - `port`: The port that the node listens on.
 
 The game configuration is updated using PubSub.
+
 It contains the following fields:
 - `games`: A list of game configurations.
   - `id`: The unique identifier of the game in base58 format.
@@ -56,7 +66,9 @@ go build main.go
 
 ### Modify the configuration file
 `config_example.json` is an example configuration file. You can modify it to fit your needs.
+
 Now it must be named `config.json`.
+
 Example configuration:
 ```json
 {
@@ -77,10 +89,13 @@ Example configuration:
 
 ### Update the game configuration
 You can update the game configuration using PubSub.
+
 First you may wish to run `admin.go` to send the game configuration to the PubSub.
+
 ```bash
 go run admin.go
 ```
+
 Then you can send `PUT` request to `http://localhost:8080/config` to update the game configuration.
 
 Example Game Configuration:
@@ -116,7 +131,9 @@ Here is an example network topology of PureGamer.
 
 ## Implementation Details
 PureGamer is implemented in Go.
+
 In directory `modules`, you can find the implementation of the core modules of PureGamer.
+
 - `entry` exposes ports to receive game traffic.
 - `exit` sends game traffic to the game server.
 - `optimizer` utilizes the latency information to route the game traffic.
